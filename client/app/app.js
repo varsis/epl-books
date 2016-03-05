@@ -7,7 +7,7 @@ angular.module('eplBooksApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
