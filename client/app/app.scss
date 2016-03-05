@@ -14,9 +14,17 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
+.full-height-view {
+    height: calc(100% - 51px);
+    height: -o-calc(100% - 51px);
+    height: -webkit-calc(100% - 51px);
+    height: -moz-calc(100% - 51px);
+}
+
 // Component styles are injected through grunt
 // injector
 @import 'main/main.scss';
+@import 'mapView/mapView.scss';
 @import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 // endinjector

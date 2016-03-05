@@ -2,30 +2,25 @@
 
 (function() {
 
-class MainController {
+    class MainController {
 
-  constructor($http) {
-    this.$http = $http;
-    this.awesomeThings = [];
+        constructor($scope,uiGmapGoogleMapApi) {
+            this.uiGmapGoogleMapApi = uiGmapGoogleMapApi;
+            this.$scope = $scope;
 
-    $http.get('/api/things').then(response => {
-      this.awesomeThings = response.data;
-    });
-  }
+            $scope.map = { center: { latitude: 53.5333, longitude: -113.5000 }, zoom: 12 };
 
-  addThing() {
-    if (this.newThing) {
-      this.$http.post('/api/things', { name: this.newThing });
-      this.newThing = '';
+            uiGmapGoogleMapApi.then(function(maps) {
+            });
+
+        }
+
+
     }
-  }
 
-  deleteThing(thing) {
-    this.$http.delete('/api/things/' + thing._id);
-  }
-}
+    MainController.$inject = ['$scope','uiGmapGoogleMapApi'];
 
-angular.module('eplBooksApp')
-  .controller('MainController', MainController);
+    angular.module('eplBooksApp')
+        .controller('MainController', MainController);
 
 })();
